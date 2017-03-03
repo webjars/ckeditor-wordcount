@@ -17,9 +17,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>v1.16</upstream.version>
-        <upstream.url>https://github.com/w8tcha/CKEditor-WordCount-Plugin/archive/${upstream.version}</upstream.url>
-        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/wordcount/${upstream.version}</destDir>
+        <upstream.version>1.16</upstream.version>
+        <upstream.url>https://github.com/w8tcha/CKEditor-WordCount-Plugin/archive/v${upstream.version}</upstream.url>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/wordcount/${project.version}</destDir>
         <requirejs>
             {
                 "paths": {
@@ -28,6 +28,29 @@
             }
         </requirejs>
     </properties>
+
+    <developers>
+        <developer>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://github.com/webjars/ckeditor-wordcount</url>
+        <connection>scm:git:https://github.com/webjars/ckeditor-wordcount.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/ckeditor-wordcount.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <build>
         <plugins>
@@ -61,6 +84,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
             </plugin>
 
             <plugin>
