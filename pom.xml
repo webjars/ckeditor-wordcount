@@ -17,8 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>1.17.3</upstream.version>
-        <upstream.url>https://github.com/w8tcha/CKEditor-WordCount-Plugin/archive/v${upstream.version}</upstream.url>
+        <upstream.url>https://github.com/w8tcha/CKEditor-WordCount-Plugin/archive/v${version.unsnapshot}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/wordcount/${project.version}</destDir>
         <requirejs>
             {
@@ -55,6 +54,20 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.jamesward</groupId>
+                <artifactId>unsnapshot-maven-plugin</artifactId>
+                <version>0.2</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unsnapshot</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
@@ -65,7 +78,7 @@
                         <configuration>
                             <target>
                                 <mkdir dir="${destDir}" />
-                                <get src="${upstream.url}/${upstream.version}.zip" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <get src="${upstream.url}/${version.unsnapshot}.zip" dest="${project.build.directory}/${project.artifactId}.zip" />
                                 <echo message="unzip archives" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}">
                                     <cutdirsmapper dirs="1" />
