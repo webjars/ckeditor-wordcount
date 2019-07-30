@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>ckeditor-wordcount</artifactId>
-    <version>1.17.5-SNAPSHOT</version>
+    <version>1.17.6-SNAPSHOT</version>
     <name>CKEditor-wordcount-webjar</name>
     <description>WebJar for CKEditor-wordcount</description>
     <url>http://webjars.org</url>
